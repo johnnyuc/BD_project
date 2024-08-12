@@ -1,0 +1,393 @@
+{
+	"info": {
+		"_postman_id": "ec6b8590-dbe1-4be2-99dd-4bdedc8bdd17",
+		"name": "Projeto",
+		"description": "Autores:\n\nJoão Pinheiro 2017270907  \nJoel Oliveira 2021215037  \nJohnny Fernandes 2021190668\n\nColeção de acesso ao sistema REST API da plataforma iDEI.\n\nPara mais informações sobre esta coleção, verificar o manual de utilizador que acompanha o relatório final.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27378682",
+		"_collection_link": "https://bdsuperteam.postman.co/workspace/BD~c5197a5c-38f7-4861-87d8-2f8c189048ce/collection/27189766-ec6b8590-dbe1-4be2-99dd-4bdedc8bdd17?action=share&creator=27378682&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Login de utilizador",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"Username\",\r\n    \"password\" : \"Password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/user",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "joni",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "user",
+							"disabled": true
+						},
+						{
+							"key": "adress",
+							"value": "coimbra",
+							"disabled": true
+						},
+						{
+							"key": "label",
+							"value": "record1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reproduzir música",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "usertoken",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/15",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registo de utilizadores",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "usertoken",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"Username\",\r\n    \"password\" : \"Password\",\r\n    \"email\" : \"email@utilizador.com\",\r\n    \"name\" : \"Nome do utilizador\",\r\n    \"address\" : \"Endereço do utilizador\",\r\n    \"artistic_name\" : \"Nome artístico\",\r\n    \"label\" : \"Nome da editora\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/user",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gerar cartões pré-pagos",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "usertoken",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"number_cards\" : 1,\r\n    \"card_price\" : 25\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/card",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"card"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subscrever ao premium",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "usertoken",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"period\": \"month\",\r\n    \"cards\": [1, 2]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/subscription",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"subscription"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inserir músicas",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "usertoken",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Nome da música\",\r\n    \"release_date\" : \"DD-MM-AAAA\",\r\n    \"genre\" : \"Género\",\r\n    \"duration\" : 3,\r\n    \"album\" : \"Nome do álbum\",\r\n    \"label\" : \"Nome da editora\",\r\n    \"other_artists\" : [1, 2, ...]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/song",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"song"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inserir álbuns",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "usertoken",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Nome do álbum\",\r\n    \"release_date\" : \"DD-MM-AAAA\",\r\n    \"label\" : \"Nome da editora\",\r\n    \"songs\":[\"Música 1\", \"Música 2\", ...]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/album",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"album"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar comentário",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "usertoken",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\": \"Comentário\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/comments/15/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"comments",
+						"15",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar uma playlist",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "usertoken",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Nome da playlist\",\r\n    \"visibility\" : \"public\",\r\n    \"songs\": [\"Música 1\", \"Música 2\", ...]\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/playlist",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"playlist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Procurar música",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "usertoken",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/song/{l}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"song",
+						"{l}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Procurar artista",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "usertoken",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/artist_info/42",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"artist_info",
+						"42"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gerar relatório mensal",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "usertoken",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/report/2023/05",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"report",
+						"2023",
+						"05"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:8080/dbproj"
+		}
+	]
+}
